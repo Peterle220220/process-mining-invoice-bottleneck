@@ -26,6 +26,18 @@ Working with a real-world **Purchase-to-Pay (P2P)** event log (the public *BPI C
 
 **Recommendation:** rather than a generic process-wide fix, prioritise **automated invoice matching and exception handling for high-delay Packaging vendors**, plus a monitoring dashboard that flags cases before they cross 30 / 45 / 60 days.
 
+## The findings in three charts
+
+![Slow cases by spend area: Packaging holds 37,435 of 46,465 (80.6%)](figures/slow_cases_by_spend_area.png)
+
+![Slow-case rate of the five vendors with the most slow cases, against the 25.4% overall rate](figures/slow_rate_top_vendors.png)
+
+![Slow-case rate by exception activity, against 22.6% for cases without exceptions](figures/slow_rate_by_exception.png)
+
+The charts are drawn from the summary tables of the analysis (not from raw data) by
+[`scripts/make_figures.py`](scripts/make_figures.py). The exception chart shows an
+association: a payment block may be a symptom of an upstream mismatch rather than its cause.
+
 ## Why this matters
 
 Invoice clearing sits near the end of P2P, close to financial settlement. Delays here hit **payment timeliness, supplier relationships and working capital** — so shaving the long tail has a direct cash and relationship benefit.
